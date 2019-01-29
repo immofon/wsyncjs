@@ -52,10 +52,10 @@ export default {
 	},
 	send:(method,topic,...metas)=>{
 		console.log("send:",[method,topic,...metas].join("\x1F"))
-		if (data.length == 0) {
+		if (metas.length == 0) {
 			ws.send([method,topic].join("\x1F"))
 		} else {
-			ws.send([method,topic,data.join("\x1F")].join("\x1F"))
+			ws.send([method,topic,metas.join("\x1F")].join("\x1F"))
 		}
 	},
 	connected: () => {
